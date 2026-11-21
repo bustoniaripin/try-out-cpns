@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAT BKN - Seleksi Kompetensi Dasar (CPNS)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- HEADER UTAMA -->
+    <header class="top-header">
+        <div class="brand-area">
+            <div class="logo-box">
+                <span class="logo-cat">CAT</span>
+                <span class="logo-bkn">BKN</span>
+            </div>
+            <div class="brand-title">
+                <h1>COMPUTER ASSISTED TEST</h1>
+                <p>BADAN KEPEGAWAIAN NEGARA</p>
+            </div>
+        </div>
+
+        <div class="header-right">
+            <div class="stats-box">
+                <div class="stat-item">
+                    <span class="stat-label">Batas Waktu</span>
+                    <span class="stat-value">100 Menit</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Jumlah Soal</span>
+                    <span class="stat-value" id="total-questions-display">15</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Soal Dijawab</span>
+                    <span class="stat-value text-green" id="answered-count">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Belum Dijawab</span>
+                    <span class="stat-value text-red" id="unanswered-count">15</span>
+                </div>
+            </div>
+            <button type="button" class="btn-finish" id="btn-finish-exam">SELESAI UJIAN</button>
+        </div>
+    </header>
+
+    <!-- BAR IDENTITAS PESERTA -->
+    <section class="participant-bar">
+        <div class="participant-info">
+            <span><strong>Peserta:</strong> BUSTONI ARIFIN (202611004589)</span>
+            <span class="divider">|</span>
+            <span><strong>Formasi:</strong> PENGELOLA LAYANAN OPERASIONAL</span>
+        </div>
+        <div class="subtest-badge" id="subtest-category">
+            Tes Wawasan Kebangsaan (TWK)
+        </div>
+    </section>
+
+    <!-- AREA UTAMA SOAL -->
+    <main class="exam-container">
+        <div class="question-card">
+            <div class="question-header">
+                <span class="question-number" id="question-number-title">Soal No. 1</span>
+            </div>
+
+            <div class="question-body">
+                <p class="question-text" id="question-text">Memuat soal...</p>
+                
+                <div class="options-list" id="options-container">
+                    <!-- Pilihan jawaban A-E dimuat melalui JavaScript -->
+                </div>
+            </div>
+
+            <div class="question-actions">
+                <button type="button" class="btn-action btn-save" id="btn-save-next">
+                    SIMPAN DAN LANJUTKAN
+                </button>
+                <button type="button" class="btn-action btn-skip" id="btn-skip-next">
+                    LEWATKAN SOAL INI
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <!-- PANEL NAVIGASI BAWAH & TIMER -->
+    <footer class="bottom-panel">
+        <div class="nav-wrapper">
+            <button type="button" class="nav-arrow" id="btn-prev-page" title="Geser Kiri">&laquo;</button>
+            <div class="question-grid" id="question-grid">
+                <!-- Kotak nomor soal dimuat melalui JavaScript -->
+            </div>
+            <button type="button" class="nav-arrow" id="btn-next-page" title="Geser Kanan">&raquo;</button>
+        </div>
+
+        <div class="timer-box">
+            <span class="timer-label">SISA WAKTU</span>
+            <span class="timer-clock" id="timer-display">01:50:00</span>
+        </div>
+    </footer>
+
+    <!-- MODAL KONFIRMASI SELESAI UJIAN -->
+    <div class="modal-overlay" id="confirm-modal">
+        <div class="modal-box">
+            <h3>Konfirmasi Selesai Ujian</h3>
+            <p id="confirm-message">Apakah Anda yakin ingin mengakhiri ujian sekarang?</p>
+            <div class="modal-buttons">
+                <button type="button" class="btn-modal-cancel" id="btn-cancel-finish">Batal</button>
+                <button type="button" class="btn-modal-confirm" id="btn-confirm-finish">Ya, Selesai</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL HASIL SKOR AKHIR -->
+    <div class="modal-overlay" id="result-modal">
+        <div class="modal-box result-box">
+            <div class="result-header">
+                <h3>HASIL SELEKSI KOMPETENSI DASAR (SKD)</h3>
+                <p>Peserta: <strong>BUSTONI ARIFIN</strong></p>
+            </div>
+            <table class="result-table">
+                <thead>
+                    <tr>
+                        <th>Subtes</th>
+                        <th>Skor Anda</th>
+                        <th>Nilai Ambang Batas</th>
+                        <th>Keterangan</th>
+                    </tr>
+                </thead>
+                <tbody id="result-tbody">
+                    <!-- Hasil skor dimuat melalui JavaScript -->
+                </tbody>
+            </table>
+            <div class="total-score-banner">
+                Total Skor Akhir: <span id="final-total-score">0</span>
+            </div>
+            <div class="modal-buttons">
+                <button type="button" class="btn-action btn-save" onclick="location.reload()">Ulangi Simulasi</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
